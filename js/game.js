@@ -31,6 +31,7 @@ function home() {
     document.getElementById("gameOverOverlay").style.display = 'none';
     document.querySelector('.start-screen-overlay').classList.remove('hidden');
     gameRunning = false;
+    soundControl.stopGameOverMusic();
     document.getElementById('startGame').addEventListener('click', startGame);
 }
 
