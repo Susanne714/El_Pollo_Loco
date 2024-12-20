@@ -98,7 +98,7 @@ class World {
     showGameOverOverlay(result) {
         world.isGameOver = true;
         this.setGameOverResult(result);
-        this.pauseAllSounds();
+        soundControl.pauseGameSounds();
         this.displayGameOverOverlay();
     }
 
@@ -116,15 +116,6 @@ class World {
             soundControl.sounds.gameOverLosingSound.play();
             gameOverImage.src = 'img/9_intro_outro_screens/game_over/game over!.png';
         }
-    }
-
-    /**
-    * Pauses all active sounds in the game, including chicken sound, background music, and end game music.
-    */
-    pauseAllSounds() {
-        soundControl.sounds.chickenSound.pause();
-        soundControl.sounds.backgroundMusic.pause();
-        soundControl.sounds.endGame.pause();
     }
 
     /**
@@ -463,6 +454,7 @@ class World {
             this.flipImage(mo);
         }
         mo.draw(this.ctx);
+        mo.drawFrame(this.ctx);
 
         if (mo.otherDirection) {
             this.flipImageBack(mo);

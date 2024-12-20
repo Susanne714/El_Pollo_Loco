@@ -83,6 +83,7 @@ class SoundControl {
      */
     playBackgroundMusic() {
         if (this.isSoundOn) {
+            this.sounds.backgroundMusic.currentTime = 0; // Start von vorne
             this.sounds.backgroundMusic.play();
         }
     }
@@ -93,6 +94,20 @@ class SoundControl {
     stopBackgroundMusic() {
         this.sounds.backgroundMusic.pause();
         this.sounds.backgroundMusic.currentTime = 0;
+    }
+
+    stopGameOverMusic() {
+        this.sounds.gameOverWinningSound.pause();
+        this.sounds.gameOverLosingSound.pause();
+    }
+
+    /**
+    * Pauses all active sounds in the game, including chicken sound, background music, and end game music.
+    */
+    pauseGameSounds() {
+        this.sounds.chickenSound.pause();
+        this.sounds.backgroundMusic.pause();
+        this.sounds.endGame.pause();
     }
 
     /**

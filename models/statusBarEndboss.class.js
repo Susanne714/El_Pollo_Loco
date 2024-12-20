@@ -31,7 +31,7 @@ class StatusBarEndboss extends DrawableObject {
      */
     setPercentage(percentage) {
         this.percentage = percentage;
-        let path = this.IMAGES[this.resolveImageIndex()];
+        let path = this.IMAGES[StatusBar.resolveImageIndex(percentage)];
         this.img = this.imageCache[path];
 
     }
@@ -40,24 +40,24 @@ class StatusBarEndboss extends DrawableObject {
      * Resolves the index of the image based on the current percentage of the Endboss's health.
      * @returns {number} - The index of the image corresponding to the current percentage.
      */
-    resolveImageIndex() {
-        if (this.percentage == 100) {
-            return 5;
-        } else
-            if (this.percentage > 80) {
-                return 4;
-            } else
-                if (this.percentage > 60) {
-                    return 3;
-                } else
-                    if (this.percentage > 40) {
-                        return 2;
-                    } else
-                        if (this.percentage > 20) {
-                            return 1;
-                        } else {
-                            return 0;
-                        }
-    }
+    // resolveImageIndex() {
+    //     if (this.percentage == 100) {
+    //         return 5;
+    //     } else
+    //         if (this.percentage > 80) {
+    //             return 4;
+    //         } else
+    //             if (this.percentage > 60) {
+    //                 return 3;
+    //             } else
+    //                 if (this.percentage > 40) {
+    //                     return 2;
+    //                 } else
+    //                     if (this.percentage > 20) {
+    //                         return 1;
+    //                     } else {
+    //                         return 0;
+    //                     }
+    // }
 
 }

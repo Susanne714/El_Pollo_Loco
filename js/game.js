@@ -42,6 +42,8 @@ function restartGame() {
     clearGame();
     initLevel();
     world = new World(canvas, keyboard);
+    soundControl.stopGameOverMusic();
+    soundControl.playBackgroundMusic();
     startGame();
     document.getElementById("gameOverOverlay").style.display = 'none';
 }

@@ -4,7 +4,7 @@ class Character extends MovableObject {
     y = 130;
     groundLevel = 130;
     speed = 7;
-    offset = { top: 100, right: 30, bottom: 10, left: 20 };
+    offset = { top: 100, right: 35, bottom: 10, left: 30 };
     collectedBottles = [];
     throwableBottles = [];
     collectedCoins = [];
