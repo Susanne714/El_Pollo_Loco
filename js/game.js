@@ -16,6 +16,7 @@ function startGame() {
         init();
 
         if (soundControl.isSoundOn) {
+            soundControl.resetAllSounds();
             soundControl.playBackgroundMusic();
         }
     }
@@ -43,7 +44,7 @@ function restartGame() {
     clearGame();
     initLevel();
     world = new World(canvas, keyboard);
-    soundControl.stopGameOverMusic();
+    soundControl.resetAllSounds();
     soundControl.playBackgroundMusic();
     startGame();
     document.getElementById("gameOverOverlay").style.display = 'none';
