@@ -93,12 +93,19 @@ class SoundControl {
      */
     stopBackgroundMusic() {
         this.sounds.backgroundMusic.pause();
-        this.sounds.backgroundMusic.currentTime = 0;
     }
 
     stopGameOverMusic() {
         this.sounds.gameOverWinningSound.pause();
         this.sounds.gameOverLosingSound.pause();
+    }
+
+    resetAllSounds() {
+        for (const soundKey in this.sounds) {
+            const sound = this.sounds[soundKey];
+            sound.pause();          // Sound pausieren
+            sound.currentTime = 0;  // Zurück auf Anfang setzen
+        }
     }
 
     /**
